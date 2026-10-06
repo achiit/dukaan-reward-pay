@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#ffffff">
+<title>₹50 Bonus — Registration Offer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============ BASE ============ */
+*,*::before,*::after{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{
+  font-family:'Baloo 2',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  background:#ffffff;
+  color:#14532d;
+  min-height:100dvh;
+  overflow-x:hidden;
+  position:relative;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+body.locked{overflow:hidden}
+
+/* ============ BACKGROUND 3D SHAPES ============ */
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.blob{
+  position:absolute;border-radius:50%;
+  background:radial-gradient(circle at 32% 26%,#ffffff 0%,#d1fae5 24%,#6ee7a5 55%,#22c55e 82%,#15803d 100%);
+  box-shadow:
+    0 22px 42px rgba(22,163,74,.28),
+    inset 0 -10px 18px rgba(21,128,61,.32),
+    inset 0 9px 16px rgba(255,255,255,.9);
+  opacity:.5;
+  animation:floaty 8s ease-in-out infinite;
+}
+.blob.b1{width:150px;height:150px;top:-58px;left:-58px;animation-duration:9s}
+.blob.b2{width:112px;height:112px;top:132px;right:-50px;animation-duration:7s;animation-delay:1.2s}
+.blob.b3{width:92px;height:92px;bottom:140px;left:-40px;animation-duration:8.5s;animation-delay:2.4s}
+.blob.b4{width:70px;height:70px;bottom:-14px;right:14px;animation-duration:6.5s;animation-delay:.6s}
+
+@keyframes floaty{
+  0%,100%{transform:translateY(0) rotate(0deg)}
+  50%{transform:translateY(-18px) rotate(7deg)}
+}
+
+/* ============ LAYOUT ============ */
+.page{
+  position:relative;z-index:1;
+  max-width:430px;margin:0 auto;
+  padding:18px 16px 34px;
+  display:flex;flex-direction:column;gap:16px;
+}
+
+/* ============ ENTRANCE ============ */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(24px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.reveal{opacity:0;animation:fadeUp .75s cubic-bezier(.22,1,.36,1) forwards}
+
+/* ============ 3D TYPOGRAPHY ============ */
+.title3d{
+  position:relative;display:inline-block;
+  line-height:1.06;letter-spacing:.01em;
+  font-weight:800;
+}
+.title3d .t-shadow{
+  position:absolute;left:0;top:0;width:100%;
+  color:#15803d;
+  text-shadow:
+    0 1px 0 #15803d,
+    0 2px 0 #14762f,
+    0 3px 0 #126c2b,
+    0 4px 0 #116328,
+    0 5px 0 #0f5a24,
+    0 6px 0 #0d5221,
+    0 9px 14px rgba(16,110,55,.42);
+  z-index:0;
+}
+.title3d .t-front{
+  position:relative;z-index:1;
+  background:linear-gradient(180deg,#dcffee 0%,#7bf0ac 26%,#22c55e 58%,#15803d 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+}
+
+/* ============ HERO ============ */
+.hero{text-align:center;padding-top:8px}
+.hero-title{font-size:clamp(2.35rem,13vw,3.3rem);display:inline-block}
+.hero-sub{margin-top:14px}
+.sub-pill{
+  display:inline-block;
+  padding:8px 22px;border-radius:999px;
+  font-size:.92rem;font-weight:800;letter-spacing:.12em;color:#fff;
+  background:linear-gradient(180deg,#5ee89b 0%,#22c55e 55%,#16a34a 100%);
+  text-shadow:0 2px 4px rgba(9,64,32,.4);
+  box-shadow:
+    0 6px 0 #12813d,
+    0 13px 22px rgba(22,163,74,.35),
+    inset 0 3px 6px rgba(255,255,255,.6),
+    inset 0 -4px 8px rgba(9,64,32,.22);
+}
+
+/* ============ IMAGE CARD ============ */
+.img-card{
+  position:relative;
+  border-radius:28px;padding:7px;
+  background:linear-gradient(160deg,#ffffff,#ecfdf5 50%,#bbf7d0 100%);
+  box-shadow:
+    0 14px 0 #dcfce7,
+    0 26px 40px rgba(22,163,74,.26);
+  animation:floatCard 5s ease-in-out infinite;
+}
+@keyframes floatCard{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+.img-card img{
+  display:block;width:100%;height:auto;
+  border-radius:22px;object-fit:cover;
+}
+.img-fallback{
+  display:none;border-radius:22px;padding:30px 16px;text-align:center;
+  background:linear-gradient(160deg,#34d97f 0%,#16a34a 55%,#0f5a24 100%);
+  color:#fff;
+  box-shadow:inset 0 6px 14px rgba(255,255,255,.35),inset 0 -10px 20px rgba(9,64,32,.35);
+}
+.img-fallback.on{display:block}
+.fb-amt{
+  font-size:3.2rem;font-weight:800;line-height:1;
+  text-shadow:0 4px 0 #0d5221,0 8px 14px rgba(0,0,0,.3);
+}
+.fb-txt{
+  margin-top:6px;font-size:1.05rem;font-weight:800;letter-spacing:.14em;
+  text-shadow:0 2px 5px rgba(0,0,0,.3);
+}
+
+/* ============ 3D BUTTON ============ */
+.btn3d{
+  position:relative;display:block;width:100%;
+  border:0;cursor:pointer;font-family:inherit;font-weight:800;
+  color:#fff;font-size:1.42rem;letter-spacing:.06em;
+  padding:16px 18px;border-radius:22px;
+  background:linear-gradient(180deg,#7bf0ac 0%,#34d97f 30%,#22c55e 56%,#15803d 100%);
+  text-shadow:0 3px 5px rgba(9,64,32,.45);
+  box-shadow:
+    0 9px 0 #12813d,
+    0 20px 30px rgba(22,163,74,.4),
+    inset 0 4px 8px rgba(255,255,255,.65),
+    inset 0 -7px 12px rgba(9,64,32,.28);
+  overflow:hidden;isolation:isolate;
+  animation:btnPulse 2.4s ease-in-out infinite;
+  transition:transform .12s ease;
+}
+.btn3d::before{
+  content:'';position:absolute;left:8%;top:7%;width:84%;height:36%;
+  border-radius:50%;pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,255,255,.8),rgba(255,255,255,0));
+  filter:blur(2px);
+}
+.btn3d:active{
+  animation:none;
+  transform:translateY(7px) scale(.99);
+  box-shadow:
+    0 2px 0 #12813d,
+    0 8px 16px rgba(22,163,74,.35),
+    inset 0 4px 8px rgba(255,255,255,.6);
+}
+@keyframes btnPulse{
+  0%,100%{
+    transform:scale(1);
+    box-shadow:0 9px 0 #12813d,0 20px 30px rgba(22,163,74,.4),inset 0 4px 8px rgba(255,255,255,.65),inset 0 -7px 12px rgba(9,64,32,.28);
+  }
+  50%{
+    transform:scale(1.03);
+    box-shadow:0 9px 0 #12813d,0 24px 42px rgba(22,163,74,.55),inset 0 4px 8px rgba(255,255,255,.65),inset 0 -7px 12px rgba(9,64,32,.28);
+  }
+}
+.btn-sm{font-size:1.18rem;padding:13px 16px;border-radius:18px}
+
+/* ============ INFO CARD ============ */
+.info-card{
+  background:linear-gradient(180deg,#ffffff 0%,#f2fdf6 100%);
+  border:2px solid #bbf7d0;
+  border-radius:24px;
+  padding:18px 15px;
+  text-align:center;
+  box-shadow:
+    0 10px 0 #dcfce7,
+    0 20px 30px rgba(22,163,74,.16);
+}
+.info-line{
+  margin:0 0 12px;
+  font-size:1.12rem;
+  font-weight:700;
+  line-height:1.72;
+  color:#14532d;
+}
+.info-line:last-child{margin-bottom:0}
+.info-card b{
+  color:#16a34a;
+  text-shadow:0 2px 0 #dcfce7;
+  font-weight:800;
+}
+
+/* ============ MODAL ============ */
+.overlay{
+  position:fixed;inset:0;z-index:60;
+  display:none;align-items:center;justify-content:center;
+  padding:20px;
+  background:rgba(6,60,30,.45);
+  -webkit-backdrop-filter:blur(7px);
+  backdrop-filter:blur(7px);
+}
+.overlay.show{display:flex;animation:fadeIn .25s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+.modal{
+  position:relative;width:100%;max-width:340px;
+  background:#fff;border-radius:28px;
+  padding:24px 18px 20px;
+  text-align:center;
+  box-shadow:
+    0 12px 0 #dcfce7,
+    0 30px 60px rgba(6,60,30,.4);
+  animation:popIn .42s cubic-bezier(.34,1.56,.64,1) forwards;
+}
+@keyframes popIn{
+  from{opacity:0;transform:scale(.82) translateY(14px)}
+  to{opacity:1;transform:scale(1) translateY(0)}
+}
+.modal.shake{animation:shakeX .45s ease}
+@keyframes shakeX{
+  0%,100%{transform:translateX(0)}
+  20%{transform:translateX(-9px)}
+  40%{transform:translateX(8px)}
+  60%{transform:translateX(-6px)}
+  80%{transform:translateX(4px)}
+}
+.modal-close{
+  position:absolute;top:10px;right:12px;
+  width:34px;height:34px;border:0;border-radius:50%;
+  background:#f0fdf4;color:#16a34a;
+  font-size:1.3rem;font-weight:800;line-height:1;
+  cursor:pointer;font-family:inherit;
+  box-shadow:0 3px 0 #dcfce7;
+}
+.modal-close:active{transform:translateY(2px);box-shadow:0 1px 0 #dcfce7}
+
+.lock-badge{
+  width:56px;height:56px;margin:0 auto 8px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;border-radius:50%;
+  background:radial-gradient(circle at 32% 26%,#ffffff,#bbf7d0 45%,#4ade80 100%);
+  box-shadow:0 7px 0 #bbf7d0,0 12px 20px rgba(22,163,74,.3),inset 0 4px 8px rgba(255,255,255,.8);
+}
+.modal-title{
+  margin:4px 0 16px;
+  font-size:1.55rem;font-weight:800;letter-spacing:.06em;
+  background:linear-gradient(180deg,#6ee7a5 0%,#22c55e 45%,#15803d 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+  filter:drop-shadow(0 3px 0 #dcfce7);
+}
+.code-input{
+  width:100%;
+  padding:14px 12px;
+  border-radius:16px;
+  border:2px solid #bbf7d0;
+  background:#f0fdf4;
+  font-family:inherit;
+  font-size:1.35rem;font-weight:800;
+  text-align:center;letter-spacing:.28em;
+  color:#14532d;outline:none;
+  box-shadow:inset 0 4px 10px rgba(22,163,74,.13);
+  transition:border-color .2s,box-shadow .2s;
+}
+.code-input::placeholder{
+  letter-spacing:normal;font-size:1.02rem;
+  font-weight:700;color:#86a98f;
+}
+.code-input:focus{
+  border-color:#22c55e;
+  box-shadow:inset 0 4px 10px rgba(22,163,74,.13),0 0 0 4px rgba(34,197,94,.2);
+}
+.err{
+  display:none;
+  margin:10px 0 0;
+  font-size:1rem;font-weight:800;color:#dc2626;
+}
+.err.show{display:block;animation:shakeX .45s ease}
+.modal .btn3d{margin-top:16px}
+
+/* ============ SUCCESS ============ */
+.success-card{
+  width:100%;max-width:330px;
+  background:#fff;border-radius:28px;
+  padding:26px 18px 22px;
+  text-align:center;
+  box-shadow:0 12px 0 #dcfce7,0 30px 60px rgba(6,60,30,.4);
+  animation:popIn .45s cubic-bezier(.34,1.56,.64,1) forwards;
+}
+.sc-item{opacity:0;animation:popUp .55s cubic-bezier(.34,1.56,.64,1) forwards}
+@keyframes popUp{
+  from{opacity:0;transform:scale(.7) translateY(12px)}
+  to{opacity:1;transform:scale(1) translateY(0)}
+}
+.d1{animation-delay:.08s}
+.d2{animation-delay:.55s}
+.d3{animation-delay:.75s}
+.d4{animation-delay:.95s}
+
+.check{width:104px;height:104px;display:block;margin:0 auto}
+.check-circle{
+  fill:none;stroke:#22c55e;stroke-width:8;stroke-linecap:round;
+  stroke-dasharray:315;stroke-dashoffset:315;
+  animation:draw .75s ease forwards;
+  filter:drop-shadow(0 4px 6px rgba(22,163,74,.35));
+}
+.check-mark{
+  fill:none;stroke:#16a34a;stroke-width:11;
+  stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:110;stroke-dashoffset:110;
+  animation:draw .45s .62s ease forwards;
+}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+.verified-title{
+  font-size:2.1rem;letter-spacing:.05em;margin-top:6px;
+}
+.entry-open{
+  margin:8px 0 18px;
+  font-size:1.15rem;font-weight:800;letter-spacing:.22em;
+  color:#16a34a;
+  text-shadow:0 2px 0 #dcfce7;
+}
+
+/* ============ SAFETY ============ */
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+}
+</style>
+</head>
+<body>
+
+<!-- decorative 3D shapes -->
+<div class="bg" aria-hidden="true">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+  <div class="blob b4"></div>
+</div>
+
+<main class="page">
+
+  <!-- 1. HERO -->
+  <header class="hero reveal" style="animation-delay:.05s">
+    <h1 class="title3d hero-title">
+      <span class="t-shadow" aria-hidden="true">₹50 BONUS</span>
+      <span class="t-front">₹50 BONUS</span>
+    </h1>
+    <div class="hero-sub">
+      <span class="sub-pill">REGISTRATION OFFER</span>
+    </div>
+  </header>
+
+  <!-- 2. CENTER IMAGE -->
+  <div class="reveal" style="animation-delay:.18s">
+    <div class="img-card">
+      <img id="heroImg"
+           src="https://previews.123rf.com/images/rogistok/rogistok1611/rogistok161100132/67100813-financial-success-businessman-with-money-pop-art-retro-comic-book-illustration-lottery-and-cash.jpg"
+           alt="₹50 Bonus Offer"
+           referrerpolicy="no-referrer"
+           loading="eager">
+      <div class="img-fallback" id="imgFallback">
+        <div class="fb-amt">₹50</div>
+        <div class="fb-txt">BONUS CASHBACK</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. REGISTER BUTTON -->
+  <div class="reveal" style="animation-delay:.3s">
+    <button class="btn3d" id="registerBtn" type="button">REGISTER NOW</button>
+  </div>
+
+  <!-- 4. INFORMATION TEXT -->
+  <section class="info-card reveal" style="animation-delay:.42s">
+    <p class="info-line">
+      अगर आप सबको भी <b>एंट्री पासकोड</b> चाहिए,<br>
+      तो <b>ओनर से संपर्क करें।</b>
+    </p>
+    <p class="info-line">
+      अगर अपने तरीके से बार-बार <b>गलत पासकोड</b><br>
+      डालते रहोगे तो <b>ब्लॉक कर दिया जाएगा।</b>
+    </p>
+    <p class="info-line">
+      इसलिए एंट्री करने से पहले<br>
+      <b>ओनर से संपर्क करें।</b>
+    </p>
+  </section>
+
+</main>
+
+<!-- 5. ACCESS CODE POPUP -->
+<div class="overlay" id="overlay" aria-hidden="true">
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="closeModal" type="button" aria-label="Close">✕</button>
+    <div class="lock-badge" aria-hidden="true">🔒</div>
+    <h2 class="modal-title" id="modalTitle">ENTRY PASSCODE</h2>
+    <input class="code-input"
+           id="codeInput"
+           type="tel"
+           inputmode="numeric"
+           pattern="[0-9]*"
+           autocomplete="off"
+           maxlength="6"
+           placeholder="पासकोड डालें"
+           aria-label="पासकोड डालें">
+    <p class="err" id="errMsg">गलत पासकोड</p>
+    <button class="btn3d btn-sm" id="verifyBtn" type="button">VERIFY</button>
+  </div>
+</div>
+
+<!-- 6. SUCCESS -->
+<div class="overlay" id="successOverlay" aria-hidden="true">
+  <div class="success-card">
+    <div class="sc-item d1">
+      <svg class="check" viewBox="0 0 120 120" aria-hidden="true">
+        <circle class="check-circle" cx="60" cy="60" r="50"></circle>
+        <path class="check-mark" d="M36 62 L53 79 L85 42"></path>
+      </svg>
+    </div>
+    <div class="sc-item d2">
+      <div class="title3d verified-title">
+        <span class="t-shadow" aria-hidden="true">VERIFIED</span>
+        <span class="t-front">VERIFIED</span>
+      </div>
+    </div>
+    <div class="sc-item d3">
+      <p class="entry-open">ENTRY OPEN</p>
+    </div>
+    <div class="sc-item d4">
+      <button class="btn3d btn-sm" id="openEntry" type="button">OPEN ENTRY</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var ACCESS_CODE = '773970';
+  var ENTRY_URL   = 'https://achiit.github.io/dukaan-rewardpaycom';
+
+  var overlay        = document.getElementById('overlay');
+  var modal          = document.getElementById('modal');
+  var registerBtn    = document.getElementById('registerBtn');
+  var closeModalBtn  = document.getElementById('closeModal');
+  var verifyBtn      = document.getElementById('verifyBtn');
+  var codeInput      = document.getElementById('codeInput');
+  var errMsg         = document.getElementById('errMsg');
+  var successOverlay = document.getElementById('successOverlay');
+  var openEntryBtn   = document.getElementById('openEntry');
+  var heroImg        = document.getElementById('heroImg');
+  var imgFallback    = document.getElementById('imgFallback');
+
+  /* ---------- image fallback ---------- */
+  function showFallback() {
+    heroImg.style.display = 'none';
+    imgFallback.classList.add('on');
+  }
+  heroImg.addEventListener('error', showFallback);
+  if (heroImg.complete && heroImg.naturalWidth === 0) showFallback();
+
+  /* ---------- open popup ---------- */
+  function openPopup() {
+    errMsg.classList.remove('show');
+    codeInput.value = '';
+    overlay.classList.add('show');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('locked');
+    setTimeout(function () { codeInput.focus(); }, 320);
+  }
+
+  function closePopup() {
+    overlay.classList.remove('show');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('locked');
+    codeInput.blur();
+  }
+
+  registerBtn.addEventListener('click', openPopup);
+  closeModalBtn.addEventListener('click', closePopup);
+
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) closePopup();
+  });
+
+  /* ---------- verify ---------- */
+  function shakeModal() {
+    modal.classList.remove('shake');
+    void modal.offsetWidth;
+    modal.classList.add('shake');
+  }
+
+  function verifyCode() {
+    var value = codeInput.value.replace(/\D/g, '');
+
+    if (value === ACCESS_CODE) {
+      errMsg.classList.remove('show');
+      closePopup();
+      setTimeout(function () {
+        successOverlay.classList.add('show');
+        successOverlay.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('locked');
+      }, 220);
+    } else {
+      errMsg.classList.add('show');
+      codeInput.value = '';
+      shakeModal();
+      if (navigator.vibrate) { try { navigator.vibrate(60); } catch (e) {} }
+    }
+  }
+
+  verifyBtn.addEventListener('click', verifyCode);
+
+  codeInput.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') { e.preventDefault(); verifyCode(); }
+  });
+
+  codeInput.addEventListener('input', function () {
+    this.value = this.value.replace(/\D/g, '');
+    if (errMsg.classList.contains('show')) errMsg.classList.remove('show');
+  });
+
+  /* ---------- open entry ---------- */
+  openEntryBtn.addEventListener('click', function () {
+    window.location.href = ENTRY_URL;
+  });
+
+})();
+</script>
+</body>
+</html>
